@@ -868,4 +868,31 @@ public class GraphicsUtilities {
                     img.getWidth(),       img.getHeight(),
                     null);
     }
+
+    /**
+     * Mods alpha value of an buffered image
+     * http://www.java2s.com/Code/Java/2D-Graphics-GUI/MakeimageTransparency.htm
+     * @param source image of which alpha value should be modified
+     * @param alpha alpha value between 0 and 1
+     * @return modified image with alpha value
+     */
+    public static BufferedImage makeImageTranslucent(BufferedImage source, double alpha) {
+        if(source == null){
+            return null;
+        }
+
+        BufferedImage target = new BufferedImage(source.getWidth(),
+                source.getHeight(), java.awt.Transparency.TRANSLUCENT);
+        // Get the images graphics
+        Graphics2D g = target.createGraphics();
+        // Set the Graphics composite to Alpha
+        g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER,
+                (float) alpha));
+        // Draw the image into the prepared reciver image
+        g.drawImage(source, null, 0, 0);
+        // let go of all system resources in this Graphics
+        g.dispose();
+        // Return the image
+        return target;
+    }
 }

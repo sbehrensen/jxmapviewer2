@@ -55,7 +55,7 @@ public abstract class AbstractTileFactory extends TileFactory
 
     // TODO the tile map should be static ALWAYS, regardless of the number
     // of GoogleTileFactories because each tile is, really, a singleton.
-    private LinkedHashMap<String, Tile> tileMap = new LinkedHashMap<String, Tile>() {
+    protected LinkedHashMap<String, Tile> tileMap = new LinkedHashMap<String, Tile>() {
             private static final int CACHE_SIZE = 512;
             private static final long serialVersionUID = 1;
 
@@ -66,7 +66,7 @@ public abstract class AbstractTileFactory extends TileFactory
         };
 
 
-    private TileCache cache = new TileCache();
+    protected TileCache cache = new TileCache();
 
     /**
      * Creates a new instance of DefaultTileFactory using the spcified TileFactoryInfo
@@ -89,7 +89,7 @@ public abstract class AbstractTileFactory extends TileFactory
         return getTile(x, y, zoom, true);
     }
 
-    private Tile getTile(int tpx, int tpy, int zoom, boolean eagerLoad)
+    Tile getTile(int tpx, int tpy, int zoom, boolean eagerLoad)
     {
         // wrap the tiles horizontally --> mod the X with the max width
         // and use that

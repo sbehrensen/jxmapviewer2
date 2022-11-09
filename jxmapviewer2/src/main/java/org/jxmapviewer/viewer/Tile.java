@@ -32,7 +32,7 @@ public class Tile extends AbstractBean
 
     private Priority priority = Priority.High;
 
-    private TileFactory dtf;
+    protected TileFactory dtf;
 
     private boolean isLoading = false;
 
@@ -44,7 +44,7 @@ public class Tile extends AbstractBean
     /**
      * The url of the image to load for this tile
      */
-    private String url;
+    protected String url;
 
     /**
      * Indicates that loading has succeeded. A PropertyChangeEvent will be fired when the loading is completed
