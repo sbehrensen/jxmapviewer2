@@ -12,15 +12,12 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 /**
  * A file/folder-based cache
  */
 public class FileBasedLocalCache implements LocalCache {
 
-    private static final Log log = LogFactory.getLog(FileBasedLocalCache.class);
+    private static final org.apache.logging.log4j.Logger log = org.apache.logging.log4j.LogManager.getLogger(FileBasedLocalCache.class);
 
     private final File cacheDir;
     private final boolean checkForUpdates;

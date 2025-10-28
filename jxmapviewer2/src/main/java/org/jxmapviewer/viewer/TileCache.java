@@ -19,16 +19,13 @@ import java.util.Map;
 
 import javax.imageio.ImageIO;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 /**
  * An implementation only class for now. For internal use only.
  * @author joshua.marinacci@sun.com
  */
 public class TileCache
 {
-    private static final Log log = LogFactory.getLog(TileCache.class);
+    private static final org.apache.logging.log4j.Logger log = org.apache.logging.log4j.LogManager.getLogger(TileCache.class);
     
     private Map<URI, BufferedImage> imgmap = new HashMap<URI, BufferedImage>();
     private LinkedList<URI> imgmapAccessQueue = new LinkedList<URI>();

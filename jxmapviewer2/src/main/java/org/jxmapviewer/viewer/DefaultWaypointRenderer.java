@@ -15,8 +15,6 @@ import java.awt.image.BufferedImage;
 
 import javax.imageio.ImageIO;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jxmapviewer.JXMapViewer;
 
 /**
@@ -25,7 +23,7 @@ import org.jxmapviewer.JXMapViewer;
  */
 public class DefaultWaypointRenderer implements WaypointRenderer<Waypoint>
 {
-    private static final Log log = LogFactory.getLog(DefaultWaypointRenderer.class);
+    private static final org.apache.logging.log4j.Logger log = org.apache.logging.log4j.LogManager.getLogger(DefaultWaypointRenderer.class);
     
     private BufferedImage img = null;
 
@@ -40,7 +38,7 @@ public class DefaultWaypointRenderer implements WaypointRenderer<Waypoint>
         }
         catch (Exception ex)
         {
-            log.warn("couldn't read standard_waypoint.png", ex);
+        	log.warn("couldn't read standard_waypoint.png", ex);
         }
     }
 

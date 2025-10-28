@@ -16,8 +16,6 @@ import java.net.URLConnection;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jxmapviewer.cache.FileBasedLocalCache;
 import org.jxmapviewer.cache.LocalCache;
 
@@ -27,7 +25,7 @@ import org.jxmapviewer.cache.LocalCache;
 @Deprecated
 public class LocalResponseCache extends ResponseCache
 {
-    private static final Log log = LogFactory.getLog(LocalResponseCache.class);
+    private static final org.apache.logging.log4j.Logger log = org.apache.logging.log4j.LogManager.getLogger(LocalResponseCache.class);
 
     private final String baseURL;
 
