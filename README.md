@@ -15,7 +15,7 @@ The content of this project are also available at [Maven Central](https://mvnrep
 <dependency>
     <groupId>org.jxmapviewer</groupId>
     <artifactId>jxmapviewer2</artifactId>
-    <version>2.5</version>
+    <version>2.8</version>
 </dependency>
 ```
 
@@ -28,6 +28,10 @@ Alternatively, they can be run from the command line after creating a Maven pack
 $ mvn clean package
 $ java -cp target/jxmapviewer2-examples-2.5.jar sample1_basics.Sample1
 ```
+
+### GeoPackage data
+
+An example on how to integrate GeoPackage data has been implemented here: https://github.com/msteiger/jxmapviewer2/pull/122
 
 ### History
 
